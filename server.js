@@ -9,6 +9,8 @@ const https = require('https');
 const fs = require('fs');
 const pg = require('pg');
 
+x = 1;
+
 // Require server modules
 const resources = require('./modules/resources');
 
