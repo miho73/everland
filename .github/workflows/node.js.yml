@@ -21,6 +21,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Run test
       run: |
         ret=$(echo `find . -name "server.js" -exec sh -c 'node --check {}; if [ $? -eq 0 ]; then echo PASS {} $'\n'; else echo FAIL {} $'\n'; fi;' \; ;`;)
         echo $ret
