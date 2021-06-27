@@ -4,7 +4,7 @@
   "description": "Everland website server code",
   "main": "server.js",
   "scripts": {
-    "test": "npm test",
+    "test": "node server.js",
     "start": "node server.js"
   },
   "repository": {
@@ -27,6 +27,7 @@
     "express-session": "^1.17.2",
     "fs": "^0.0.1-security",
     "https": "^1.0.0",
+    "latest-version": "^5.1.0",
     "pg": "^8.6.0",
     "serve-favicon": "^2.5.0"
   }
