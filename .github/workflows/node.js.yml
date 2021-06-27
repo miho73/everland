@@ -21,5 +21,6 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: find . -name "*.js" -exec node --check {} \;
-    - run: '>&2 echo "error"'
+    - run: ret=$(echo `find . -name "server.js" -exec sh -c 'node --check {}; if [ $? -eq 0 ]; then echo PASS {} $'\n'; else echo FAIL {} $'\n'; fi;' \; ;`;)
+    - run: echo $ret
+    - run: if [[ $ret == *"FAIL"* ]]; then exit 1; fi;
