@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <%- include('common/header.ejs')%>
+        <link rel="stylesheet" type="text/css" href="/lib/styles/index.css">
+        <script src="/lib/scripts/index.js"></script>
+        <title>EVERLAND</title>
+    </head>
+    <body>
+        <div id="notice"></div>
+        <div id="navigation">
+            <a href="/" class="nav-logo">
+                <img class="nav-logo" src="/lib/images/logo_h.jpg" alt="EVERLAND">
+            </a>
+            <ul class="nav hide-on-mobile">
+                <li class="nav">
+                    <a href="/" class="nav" style="border-left-width: 2px;">
+                        <p class="nav">에버랜드</p>
+                    </a>
+                </li>
+                <li class="nav">
+                    <a href="https://www.everland.com/web/caribbean/main.html" class="nav">
+                        <p class="nav">
+                            캐리비안 베이
+                        </p>
+                    </a>
+                </li>
+                <li class="nav">
+                    <a href="https://www.everland.com/web/hb/main.html" class="nav" style="border-right-width: 2px;">
+                        <p class="nav">홈브리지</p>
+                    </a>
+                </li>
+            </ul>
+            <button class="nav-ham inline-on-mobile" onclick="hamburger()">
+                <div class="bun">
+                    <span id="top-patty1" class="pattyc"><span id="top-patty2" class="patty"></span></span>
+                    <span id="bottom-patty1" class="pattyc"><span id="bottom-patty2" class="patty" style="margin-bottom: 0;"></span></span>
+                </div>
+            </button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <%- include('./common/header.ejs')%>
+        <link rel="stylesheet" type="text/css" href="/lib/styles/error.css">
+        <title><%= error_name%></title>
+    </head>
+    <body>
+        <div class="vh-center" id="err-container">
+            <a id="logo_gohome" href="/">
+                <img src="http://www.everland.com/web/images/front/everland/error/error_logo_resort.gif">
+            </a>
+            <p><%- error_explain%></p>
+            <a href="/">Everland 메인</a>
+        </div>
+    </body>
+</html>

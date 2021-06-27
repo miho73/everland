@@ -1,0 +1,53 @@
+/* 모든 사이트에 공통 적용 */
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+* { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
+html,body {
+    padding: env(safe-area-inset);
+    padding: 0;
+    margin: 0;
+}
+
+*.v-center {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+*.h-center {
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+*.vh-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+*.full-width {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    *.hide-on-mobile {
+        display: none !important;
+    }
+    *.block-on-mobile {
+        display: block !important;
+    }
+    *.inline-on-mobile {
+        display: inline !important;
+    }
+}

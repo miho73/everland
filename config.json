@@ -1,0 +1,7 @@
+{
+    "server": {
+        "external_domain": "everland.n-e.kr",
+        "http_port": 1888,
+        "https_port": 1440
+    }
+}

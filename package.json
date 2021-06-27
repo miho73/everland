@@ -1,0 +1,33 @@
+{
+  "name": "everland",
+  "version": "1.0.0",
+  "description": "Everland website server code",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miho73/everland.git"
+  },
+  "keywords": [
+    "everland"
+  ],
+  "author": "miho73",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miho73/everland/issues"
+  },
+  "homepage": "https://github.com/miho73/everland#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "pg": "^8.6.0",
+    "serve-favicon": "^2.5.0"
+  }
+}
