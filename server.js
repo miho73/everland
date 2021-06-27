@@ -19,7 +19,7 @@ app.set("view engine", "ejs");
 app.use('/lib', express.static('./library'));
 app.disable('x-powered-by');
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json();
+app.use(bodyParser.json());
 
 // Load server config
 const configJSON = JSON.parse(fs.readFileSync('./config.json'));
