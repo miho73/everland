@@ -48,6 +48,7 @@ a.nav-logo {
 }
 img.nav-logo {
     height: 6vh;
+    border-width: 0;
 }
 button.nav-ham {
     height: 6vh;
