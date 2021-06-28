@@ -14,7 +14,7 @@ const resources = require('./modules/resources');
 
 //express setup
 const app = express();
-//app.use(favicon(__dirname + '/library/resources/favicon.ico'));
+app.use(favicon(__dirname + '/lib/etc/favicon.ico'));
 app.set("view engine", "ejs");
 app.use('/lib', express.static('./library'));
 app.disable('x-powered-by');
