@@ -220,13 +220,35 @@ div.section-div {
 }
 
 /* show div - visit ev */
+div.visit-ev-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+a.visit-ev-a {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    border-radius: 5px;
+    padding: 4px;
+    -webkit-transition: background-color 0.1s linear;
+    -moz-transition: background-color 0.1s linear;
+    -ms-transition: background-color 0.1s linear;
+    -o-transition: background-color 0.1s linear;
+    transition: background-color 0.1s linear;
+}
 a.visit-ev-a:hover {
     text-decoration: none;
+    background-color: #eee;
 }
 svg.visit-ev-svg {
     width: 60px;
     height: 40px;
-    float: left;
 }
 div#visit-ev::after {
     content: ".";
@@ -237,27 +259,23 @@ div#visit-ev::after {
     height: 0;
 }
 p.visit-ev-a-txt {
-    padding: 0 0 0 60px;
     font-size: 1.2em;
     text-align: left;
-    margin: 0;
+    word-wrap: normal;
+    margin: 0 0 0 5px;
 }
 @media (max-width: 900px) {
+    svg.visit-ev-svg {
+        width: 40px;
+        height: 26px;
+    }
     p.visit-ev-a-txt {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 }
-table.visit-ev-table {
-    border-collapse: collapse;
-}
-table.visit-ev-table > tbody > tr > td {
-    border-color: #111;
-    border-style: solid;
-    padding: 7px;
-}
-td.left-vev {
-    border-width: 0 1px 1px 0;
-}
-td.right-vev {
-    border-width: 0 0 1px 0;
+/* visit everland menu 2 in line */
+@media (max-width: 750px) {
+    a.visit-ev-a {
+        width: 45%;
+    }
 }
