@@ -135,7 +135,6 @@ div#main {
 }
 div#show {
     width: 100%;
-    height: fit-content;
     overflow: hidden;
     height: 70vh;
 }
