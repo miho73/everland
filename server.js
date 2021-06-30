@@ -9,7 +9,6 @@ var http = require('http');
 const https = require('https');
 const fs = require('fs');
 const pg = require('pg');
-const { parse } = require('node-html-parser');
 
 // Require server modules
 const resources = require('./modules/resources');
