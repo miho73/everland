@@ -5,9 +5,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const favicon = require('serve-favicon');
+var http = require('http');
 const https = require('https');
 const fs = require('fs');
 const pg = require('pg');
+const { parse } = require('node-html-parser');
 
 // Require server modules
 const resources = require('./modules/resources');
@@ -65,9 +67,9 @@ app.use((req, res)=>{
 
 /*
 var options = {
-    ca: fs.readFileSync('/etc/letsencrypt/live/ipu.r-e.kr/fullchain.pem'),
-    key: fs.readFileSync('/etc/letsencrypt/live/ipu.r-e.kr/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/ipu.r-e.kr/cert.pem')
+    ca: fs.readFileSync(`/etc/letsencrypt/live/${EXTR_DOMAIN}/fullchain.pem`),
+    key: fs.readFileSync(`/etc/letsencrypt/live/${EXTR_DOMAIN}/privkey.pem`),
+    cert: fs.readFileSync(`/etc/letsencrypt/live/${EXTR_DOMAIN}/cert.pem`)
 };
 */
 app.listen(HTTP_PORT);

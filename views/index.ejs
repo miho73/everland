@@ -6,10 +6,11 @@
         <link rel="stylesheet" type="text/css" href="/lib/styles/montserrat.css">
         <link rel="stylesheet" type="text/css" href="/lib/styles/index.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://www.everland.com/timeinfo/today.js"></script>
         <script src="/lib/scripts/index.js"></script>
         <title>EVERLAND</title>
     </head>
-    <body>
+    <body onload="loaded()">
         <!--[if IE]>
         <p style="text-align: center; margin: 3px">IE9 이하 버전의 인터넷 익스플로러는 완전히 지원되지 않습니다. 다른 브라우저를 이용해 주세요.</p>
         <![endif]-->
@@ -61,7 +62,12 @@
             </div>
             <div id="frame">
                 <h1 class="subj-title">Spotlight</h1>
-                <h1 class="subj-title">Information</h1>
+                <div class="section-div">
+                    <h1 class="subj-title">Information</h1>
+                    <div class="ev-today">
+                        <h1 id="today-open-time"></h1>
+                    </div>
+                </div>
                 <div class="section-div">
                     <h1 class="subj-title">Visit Everland</h1>
                     <div id="visit-ev">
@@ -95,13 +101,14 @@
                                 <p class="visit-ev-a-txt">레스토랑</p>
                             </a>
                             <a class="visit-ev-a" href="https://www.everland.com/service/front/frontFavorite.do?method=favorAtrList&siteCode=CT00101&themeCode=CT00401">
-                                <svg class="visit-ev-svg" viewbox="0 0 70 45" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                                    
+                                <svg class="visit-ev-svg" viewbox="0 0 70 46" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                    <path d="M 17 5 V 35 M 42 5 V 35 M 25 5 V 35 M 34 5 V 35 M 17 13 H 42 M 42 21 H 17 M 17 29 H 42 L 17 5 M 25 5 L 42 21 M 42 13 L 34 5 M 17 13 L 41 35 M 31 35 L 17 21 M 17 29 L 23 35 M 48.38 6 V 35 M 42 5 L 48.38 12 L 42 13 L 48.38 20 L 42 21 L 48.38 28 L 42 29 L 48.38 35" fill="transparent" stroke="#808184" stroke-width="1"/>
+                                    <path d="M 17 5 h 25 c 11 0 6 2 0 2 c -8 1 -1 20 -19 21 c -4 -1 -5 -2 -6 -3" fill="transparent" stroke="#ff462f" stroke-width="2"/>
                                 </svg>
                                 <p class="visit-ev-a-txt">어트랙션</p>
                             </a>
                             <a class="visit-ev-a" href="https://www.everland.com/web/everland/how/traffic/how_traffic_info04.html">
-                                
+                                <img src="https://wwwcdn.everland.com/web/images/front/everland/main_new/ico_smart_reservation_05_01.png" class="visit-ev-svg">
                                 <p class="visit-ev-a-txt">교통정보</p>
                             </a>
                             <a class="visit-ev-a" href="https://www.everland.com/web/everland/now/special/special_package.html">
@@ -136,6 +143,7 @@
             </div>
             <div id="footer-bottom">
                 <p class="footer-info">본 사이트는 에버랜드를 좋아하는 한 사람에 의해 개발되었으며, 에버랜드 공식 웹사이트가 아닙니다.</p>
+                <p class="footer-info">This website is NOT official Everland website!</p>
                 <p class="footer-info">아직 공사중인 사이트입니다! 개발상황에 따라 콘텐츠가 업데이트되고 있습니다. <a href="https://github.com/miho73/everland" class="footer-content" target="__blank">여기</a>에서 개발에 참여할 수 있습니다.</p>
             </div>
         </div>
