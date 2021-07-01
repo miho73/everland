@@ -47,6 +47,14 @@ app.use('/lib', express.static('./lib'));
 app.get('/', (req, res)=>{
     res.render('index.ejs');
 });
+app.get('/:firstCh', (req, res, next)=>{
+    if(fs.existsSync(`${__dirname}/views/infs/${req.params.firstCh}.ejs`)) {
+        res.render(`infs/${req.params.firstCh}.ejs`);
+    }
+    else {
+        next();
+    }
+});
 
 app.get('/robots.txt', (req, res)=>{
     res.sendFile(__dirname+'/system/robots.txt');

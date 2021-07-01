@@ -5,46 +5,12 @@
         <%- include('common/header.ejs')%>
         <link rel="stylesheet" type="text/css" href="/lib/styles/montserrat.css">
         <link rel="stylesheet" type="text/css" href="/lib/styles/index.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://www.everland.com/timeinfo/today.js"></script>
         <script src="/lib/scripts/index.js"></script>
         <title>EVERLAND</title>
     </head>
     <body onload="loaded()">
-        <!--[if IE]>
-        <p style="text-align: center; margin: 3px">IE9 이하 버전의 인터넷 익스플로러는 완전히 지원되지 않습니다. 다른 브라우저를 이용해 주세요.</p>
-        <![endif]-->
-        <div id="notice"></div>
-        <div id="navigation">
-            <a href="/" class="nav-logo">
-                <img class="nav-logo" src="/lib/images/logo_h.jpg" alt="EVERLAND">
-            </a>
-            <ul class="nav hide-on-mobile">
-                <li class="nav">
-                    <a href="/" class="nav" style="border-left-width: 2px;">
-                        <p class="nav">에버랜드</p>
-                    </a>
-                </li>
-                <li class="nav">
-                    <a href="https://www.everland.com/web/caribbean/main.html" class="nav">
-                        <p class="nav">
-                            캐리비안 베이
-                        </p>
-                    </a>
-                </li>
-                <li class="nav">
-                    <a href="https://www.everland.com/web/hb/main.html" class="nav" style="border-right-width: 2px;">
-                        <p class="nav">홈브리지</p>
-                    </a>
-                </li>
-            </ul>
-            <button class="nav-ham inline-on-mobile" onclick="hamburger()" aria-label="메뉴 열기">
-                <div class="bun">
-                    <span id="top-patty1" class="pattyc"><span id="top-patty2" class="patty"></span></span>
-                    <span id="bottom-patty1" class="pattyc"><span id="bottom-patty2" class="patty" style="margin-bottom: 0;"></span></span>
-                </div>
-            </button>
-        </div>
+        <%- include('common/navigation.ejs')%>
         <div id="main">
             <div id="show">
                 <div id="img-slide1" class="slide slide1" aria-label="에버랜드 파크 사진 1" style="display: block; opacity: 1;">
@@ -61,19 +27,35 @@
                 </div>
             </div>
             <div id="frame">
-                <h1 class="subj-title">Spotlight</h1>
+                <h1 class="subj-title mon-font">Spotlight</h1>
+                <hr class="section-div">
                 <div class="section-div">
-                    <h1 class="subj-title">Information</h1>
-                    <div class="ev-today">
-                        <h1 id="today-open-time"></h1>
+                    <h1 class="subj-title mon-font">Information</h1>
+                    <div class="ev-today" id="ev-view">
+                        <div id="ev-today-title">
+                            <h2 class="today-ev-up mon-font" id="ev-today">EVERLAND TODAY</h2>
+                            <h3 class="today-ev-up" id="ev-today-kr">오늘의 에버랜드</h3>
+                        </div>
+                        <div id="ev-today-content">
+                            <h2 id="today-day" class="today-ev-up"></h2>
+                            <h1 id="today-open-time" class="today-ev-up mon-font"></h1>
+                            <h3 id="ev-open" class="today-ev-up"></h3>
+                        </div>
+                        <div id="ev-today-content-selection">
+                            <button class="today-cont-sel-div" name="inf-div-0" id="stops-info-div" onclick="todayEv(0)">운휴 안내</button>
+                            <button class="today-cont-sel-div" name="inf-div-1" id="shows-info-div" onclick="todayEv(1)">공연 안내</button>
+                            <button class="today-cont-sel-div" name="inf-div-2" id="operations-div" onclick="todayEv(2)">운영 안내</button>
+                        </div>
                     </div>
                 </div>
+                <hr class="section-div">
                 <div class="section-div">
-                    <h1 class="subj-title">Visit Everland</h1>
+                    <h1 class="subj-title mon-font">Visit Everland</h1>
                     <div id="visit-ev">
                         <div class="visit-ev-container">
                             <a class="visit-ev-a" href="https://reservation.everland.com/web/main.do?method=index">
-                                <svg class="visit-ev-svg" viewbox="0 0 70 45" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                <svg class="visit-ev-svg" viewbox="0 0 70 45" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" role="img" aria-label="이용권 예매">
+                                    <title>이용권 예매</title>
                                     <path d="M 5 5 h 60 v 10 C 55 15 55 30 65 30 v 10 h -60 v -10 C 15 30 15 15 5 15 v -11" fill="transparent" stroke="#808184" stroke-width="2"/>
                                     <line x1="50" y1="5" x2="50" y2="10" stroke="#808184" stroke-width="2"/>
                                     <line x1="50" y1="15" x2="50" y2="20" stroke="#808184" stroke-width="2"/>
@@ -84,7 +66,8 @@
                                 <p class="visit-ev-a-txt">이용권</p>
                             </a>
                             <a class="visit-ev-a" href="https://www.everland.com/web/everland/membership/mem_year/ticket/index.html">
-                                <svg class="visit-ev-svg" viewbox="0 0 52 34" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="visit-ev-svg" viewbox="0 0 52 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="연간회원권">
+                                    <title>연간회원권</title>
                                     <rect x="11" y="2" rx="5" ry="5" width="30" height="30" fill="transparent" stroke="#808184" stroke-width="2"/>
                                     <path d="M 16 32 c 0 -13 20 -13 20 0" fill="transparent" stroke="#808184" stroke-width="2"/>
                                     <circle cx=26 cy="16" r="6" fill="transparent" stroke="#ff462f" stroke-width="2"/>
@@ -92,7 +75,8 @@
                                 <p class="visit-ev-a-txt">연간회원권</p>
                             </a>
                             <a class="visit-ev-a" href="https://www.everland.com/web/everland/favorite/restaurant/index.html">
-                                <svg class="visit-ev-svg" viewbox="0 0 56 36" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                <svg class="visit-ev-svg" viewbox="0 0 56 36" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" role="img" aria-label="레스토랑">
+                                    <title>레스토랑 </title>
                                     <circle cx="28" cy="18" r="12" fill="transparent" stroke="#808184" stroke-width="2"/>
                                     <circle cx="28" cy="18" r="7" fill="transparent" stroke="#ff462f" stroke-width="2"/>
                                     <path d="M 48 6 c -1.557 0 -3.858 7.004 -4.66 14 h 2.467 v 8.5 c 0 0.931 0.785 1.5 1.5 1.5 h 0.001 c 0.828 0 1.5 -0.672 1.5 -1.5 c 0.002 -5.037 0.009 -20.254 -0.001 -21.649 c -0.003 -0.494 -0.36 -0.851 -0.807 -0.851" fill="transparent" stroke="#808184" stroke-width="2"/>
@@ -101,18 +85,20 @@
                                 <p class="visit-ev-a-txt">레스토랑</p>
                             </a>
                             <a class="visit-ev-a" href="https://www.everland.com/service/front/frontFavorite.do?method=favorAtrList&siteCode=CT00101&themeCode=CT00401">
-                                <svg class="visit-ev-svg" viewbox="0 0 70 46" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                                <svg class="visit-ev-svg" viewbox="0 0 70 46" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" role="img" aria-label="어트랙션">
+                                    <title>어트랙션</title>
                                     <path d="M 17 5 V 35 M 42 5 V 35 M 25 5 V 35 M 34 5 V 35 M 17 13 H 42 M 42 21 H 17 M 17 29 H 42 L 17 5 M 25 5 L 42 21 M 42 13 L 34 5 M 17 13 L 41 35 M 31 35 L 17 21 M 17 29 L 23 35 M 48.38 6 V 35 M 42 5 L 48.38 12 L 42 13 L 48.38 20 L 42 21 L 48.38 28 L 42 29 L 48.38 35" fill="transparent" stroke="#808184" stroke-width="1"/>
                                     <path d="M 17 5 h 25 c 11 0 6 2 0 2 c -8 1 -1 20 -19 21 c -4 -1 -5 -2 -6 -3" fill="transparent" stroke="#ff462f" stroke-width="2"/>
                                 </svg>
                                 <p class="visit-ev-a-txt">어트랙션</p>
                             </a>
                             <a class="visit-ev-a" href="https://www.everland.com/web/everland/how/traffic/how_traffic_info04.html">
-                                <img src="https://wwwcdn.everland.com/web/images/front/everland/main_new/ico_smart_reservation_05_01.png" class="visit-ev-svg">
-                                <p class="visit-ev-a-txt">교통정보</p>
+                                <img src="https://wwwcdn.everland.com/web/images/front/everland/main_new/ico_smart_reservation_05_01.png" class="visit-ev-svg" alt="교통">
+                                <p class="visit-ev-a-txt">교통</p>
                             </a>
                             <a class="visit-ev-a" href="https://www.everland.com/web/everland/now/special/special_package.html">
-                                <svg class="visit-ev-svg" viewbox="0 0 70 46" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                <svg class="visit-ev-svg" viewbox="0 0 70 46" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" role="img" aria-label="스페셜 패키지">
+                                    <title>스페셜 패키지</title>
                                     <path d="M 8 8 h 45 l 15 15 l -15 15 h -45 v -31" fill="transparent" stroke="#808184" stroke-width="2"/>
                                     <path d="M 24 14 L 21.167 19.918 H 15 L 20 24 L 18 31 L 24 27 L 30 31 L 28 24 L 33 20 H 26.833 L 24 14 z" fill="transparent" stroke="#ff462f" stroke-width="2"/>
                                     <circle cx="50" cy="23" r="4" fill="transparent" stroke="#808184" stroke-width="2"/>
@@ -124,28 +110,6 @@
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <div id="footer-top">
-                <ul class="footer-lst">
-                    <li class="footer-lst">
-                        <a href="http://www.everland.com/web/everland/resort/intro/resort_intro.html" class="footer-lst" target="__blank" style="margin-left: 0;">에버랜드 이야기</a>
-                    </li>
-                    <li class="footer-lst">
-                        <a href="https://www.everland.com/web/everland/recruitment/cast/castinfo/cast_info_benefit.html" class="footer-lst" target="__blank">캐스트 소개</a>
-                    </li>
-                    <li class="footer-lst">
-                        <a href="http://www.everland.com/web/everland/recruitment/cast/recruitment/news/recruitment_guide01.html" class="footer-lst" target="__blank">채용</a>
-                    </li>
-                    <li class="footer-lst">
-                        <a href="https://pvoc.everland.com/" class="footer-lst" target="__blank">캐스트 참여</a>
-                    </li>
-                </ul>
-            </div>
-            <div id="footer-bottom">
-                <p class="footer-info">본 사이트는 에버랜드를 좋아하는 한 사람에 의해 개발되었으며, 에버랜드 공식 웹사이트가 아닙니다.</p>
-                <p class="footer-info">This website is NOT official Everland website!</p>
-                <p class="footer-info">아직 공사중인 사이트입니다! 개발상황에 따라 콘텐츠가 업데이트되고 있습니다. <a href="https://github.com/miho73/everland" class="footer-content" target="__blank">여기</a>에서 개발에 참여할 수 있습니다.</p>
-            </div>
-        </div>
+        <%- include('./common/footer.ejs')%>
     </body>
 </html>
